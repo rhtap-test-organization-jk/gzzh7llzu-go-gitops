@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: gzzh7llzu-go-gitops
+  description: This is GitOps manifest for gzzh7llzu-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=gzzh7llzu-go
+    backstage.io/kubernetes-id: gzzh7llzu-go 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: gzzh7llzu-go-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:gzzh7llzu-go
